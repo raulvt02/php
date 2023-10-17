@@ -6,6 +6,11 @@ $jabones = $stmt->fetchAll();
 ?>
 
 <h2>Listado de Jabones</h2>
+
+<!-- Botón para crear un nuevo jabón -->
+<a href="create.php">Crear nuevo Jabón</a>
+<br><br>
+
 <ul>
 <?php foreach ($jabones as $jabon): ?>
     <li>
@@ -15,4 +20,3 @@ $jabones = $stmt->fetchAll();
     </li>
 <?php endforeach; ?>
 </ul>
-

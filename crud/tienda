@@ -1,0 +1,23 @@
+CREATE DATABASE tienda;
+
+USE tienda;
+
+CREATE TABLE productos (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL
+);
+
+INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
+('Jabón de Lavanda', 'Jabón artesanal de lavanda con aceites esenciales', 4.99, 50),
+('Jabón de Avena', 'Jabón exfoliante con avena natural y miel', 5.49, 30),
+('Jabón de Rosa Mosqueta', 'Jabón hidratante con esencia de rosa mosqueta', 6.99, 25),
+('Jabón de Carbón Activado', 'Jabón detox de carbón activado para limpieza profunda', 5.99, 40),
+('Jabón de Cítricos', 'Jabón refrescante con esencias de naranja y limón', 4.49, 45),
+('Jabón de Menta', 'Jabón revitalizante de menta con aceite de eucalipto', 5.29, 35),
+('Jabón de Caléndula', 'Jabón suave para pieles sensibles con caléndula', 6.49, 20),
+('Jabón de Chocolate', 'Jabón nutritivo con esencia y extracto de cacao', 5.89, 30),
+('Jabón de Café', 'Jabón exfoliante con granos de café natural', 4.79, 40),
+('Jabón de Té Verde', 'Jabón antioxidante con extracto de té verde', 6.29, 28);

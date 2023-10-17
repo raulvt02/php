@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios PHP con Bootstrap</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Ejercicios PHP</h2>
+
+    <div class="accordion" id="ejerciciosAccordion">
+
+        <!-- Ejercicio 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Ejercicio 1: Hola Mundo
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#ejerciciosAccordion">
+                <div class="card-body">
+                    Solución: <code>echo "¡Hola Mundo!";</code>
+                </div>
+            </div>
+        </div>
+
+      <!-- Ejercicio 2 -->
+<div class="card">
+    <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Ejercicio 2: Variables
+            </button>
+        </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Crea dos variables, `$nombre` y `$edad`, y luego imprime "Mi nombre es [NOMBRE] y tengo [EDAD] años".
+            <pre><code>
+&lt;?php
+$nombre = "Juan";
+$edad = 25;
+echo "Mi nombre es $nombre y tengo $edad años.";
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+<!-- Ejercicio 3: Operaciones matemáticas -->
+<div class="card">
+    <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Ejercicio 3: Operaciones matemáticas
+            </button>
+        </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Dados dos números, `$a = 10` y `$b = 20`, imprime la suma, resta, multiplicación y división de estos números.
+            <pre><code>
+&lt;?php
+$a = 10;
+$b = 20;
+echo "Suma: " . ($a + $b) . "&lt;br&gt;";
+echo "Resta: " . ($a - $b) . "&lt;br&gt;";
+echo "Multiplicación: " . ($a * $b) . "&lt;br&gt;";
+echo "División: " . ($a / $b);
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- Ejercicio 4: Condiciones -->
+<div class="card">
+    <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Ejercicio 4: Condiciones
+            </button>
+        </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Dado un número, verifica si es par o impar.
+            <pre><code>
+&lt;?php
+$numero = 15;
+if ($numero % 2 == 0) {
+    echo "El número es par.";
+} else {
+    echo "El número es impar.";
+}
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+<!-- Ejercicio 5: Ciclos -->
+<div class="card">
+    <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Ejercicio 5: Ciclos
+            </button>
+        </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Imprime los números del 1 al 10 usando un ciclo `for`.
+            <pre><code>
+&lt;?php
+for ($i = 1; $i <= 10; $i++) {
+    echo $i . "&lt;br&gt;";
+}
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- Ejercicio 6: Arrays -->
+<div class="card">
+    <div class="card-header" id="headingSix">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Ejercicio 6: Arrays
+            </button>
+        </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Crea un array con los días de la semana y luego imprime cada día usando un ciclo `foreach`.
+            <pre><code>
+&lt;?php
+$dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+foreach ($dias as $dia) {
+    echo $dia . "&lt;br&gt;";
+}
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- Ejercicio 7: Funciones -->
+<div class="card">
+    <div class="card-header" id="headingSeven">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                Ejercicio 7: Funciones
+            </button>
+        </h5>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Escribe una función que tome dos números y devuelva su suma.
+            <pre><code>
+&lt;?php
+function suma($a, $b) {
+    return $a + $b;
+}
+echo suma(5, 10);  // Salida: 15
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- Ejercicio 8: Formularios -->
+<div class="card">
+    <div class="card-header" id="headingEight">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                Ejercicio 8: Formularios
+            </button>
+        </h5>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Crea un formulario HTML que tome un nombre y use PHP para imprimir un saludo.
+            <pre><code>
+&lt;!-- form.html --&gt;
+&lt;form action="saludo.php" method="post"&gt;
+    Nombre: &lt;input type="text" name="nombre"&gt;
+    &lt;input type="submit" value="Saludar"&gt;
+&lt;/form&gt;
+
+&lt;!-- saludo.php --&gt;
+&lt;?php
+$nombre = $_POST['nombre'];
+echo "¡Hola, $nombre!";
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+<!-- Ejercicio 9: Cookies -->
+<div class="card">
+    <div class="card-header" id="headingNine">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                Ejercicio 9: Cookies
+            </button>
+        </h5>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Establece una cookie que almacene el nombre del usuario y luego recupérala para mostrar un mensaje de bienvenida.
+            <pre><code>
+&lt;?php
+// Establecer cookie
+setcookie("nombre_usuario", "Juan", time() + 3600, "/");
+// Recuperar cookie y mostrar mensaje
+if(isset($_COOKIE["nombre_usuario"])) {
+    echo "¡Hola, " . $_COOKIE["nombre_usuario"] . "!";
+}
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+<!-- Ejercicio 10: Sesiones -->
+<div class="card">
+    <div class="card-header" id="headingTen">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                Ejercicio 10: Sesiones
+            </button>
+        </h5>
+    </div>
+    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#ejerciciosAccordion">
+        <div class="card-body">
+            Enunciado: Inicia una sesión y almacena una variable de sesión con un mensaje. Luego, recupera esa variable y muéstrala.
+            <pre><code>
+&lt;?php
+// Iniciar sesión
+session_start();
+// Establecer variable de sesión
+$_SESSION["mensaje"] = "Aprender PHP es divertido!";
+// Recuperar y mostrar variable de sesión
+if(isset($_SESSION["mensaje"])) {
+    echo $_SESSION["mensaje"];
+}
+?&gt;
+            </code></pre>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Enlaces a Bootstrap JS y Popper.js (necesario para los componentes de Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,268 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios PHP con Bootstrap</title>
-    <!-- Enlace a Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios PHP con Bootstrap</title>
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Prism (resaltado de código) -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">
+  <style>
+    body { background: radial-gradient(1200px 600px at 10% -10%, rgba(13,110,253,.08), transparent),
+                     radial-gradient(1200px 600px at 110% 10%, rgba(32,201,151,.08), transparent); }
+    pre { position: relative; }
+    .copy-btn {
+      position: absolute; top: .5rem; right: .5rem;
+      border: none; background: var(--bs-body-bg);
+      color: var(--bs-body-color); padding: .25rem .5rem;
+      border-radius: .25rem; opacity: .85; transition: opacity .2s;
+    }
+    .copy-btn:hover { opacity: 1; }
+    .badge-space > .badge { margin-right: .35rem; }
+    .card-header button { text-decoration: none; }
+    .lead small { color: var(--bs-secondary-color); }
+  </style>
 </head>
 <body>
 
-<div class="container mt-5">
-    <h2>Ejercicios PHP</h2>
-
-    <div class="accordion" id="ejerciciosAccordion">
-
-        <!-- Ejercicio 1 -->
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Ejercicio 1: Hola Mundo
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#ejerciciosAccordion">
-                <div class="card-body">
-                    Solución:  <pre><code>
-&lt;?php echo "¡Hola Mundo!";
-                    ?&gt;</code></pre>
-                </div>
-            </div>
-        </div>
-
-      <!-- Ejercicio 2 -->
-<div class="card">
-    <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Ejercicio 2: Variables
-            </button>
-        </h5>
+<header class="py-5 border-bottom bg-white bg-opacity-75 sticky-top backdrop-blur">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between">
+    <div class="d-flex align-items-center gap-2">
+      <i class="bi bi-code-square fs-3 text-primary"></i>
+      <div>
+        <h1 class="h4 mb-0">Ejercicios PHP</h1>
+        <p class="mb-0 small text-secondary">UD1 · Sintaxis, control de flujo, arrays, funciones, formularios, cookies y sesiones</p>
+      </div>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#ejerciciosAccordion">
+    <div class="d-flex align-items-center gap-2">
+      <a class="btn btn-sm btn-outline-secondary" href="php.md" download>
+        <i class="bi bi-download"></i> Descargar chuleta (php.md)
+      </a>
+      <button id="themeToggle" class="btn btn-sm btn-outline-dark" aria-label="Cambiar tema">
+        <i class="bi bi-moon-stars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+
+  <div class="mb-4">
+    <p class="lead">
+      Colección de ejercicios introductorios a PHP con soluciones comentadas.
+      <br><small><i class="bi bi-shield-check"></i> Incluye buenas prácticas de seguridad y notas de uso real.</small>
+    </p>
+  </div>
+
+  <div class="accordion" id="ejerciciosAccordion">
+
+    <!-- Ejercicio 1 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd1">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start" type="button" data-bs-toggle="collapse" data-bs-target="#col1" aria-expanded="true" aria-controls="col1">
+            <i class="bi bi-1-square text-primary"></i> Ejercicio 1: Hola Mundo
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-success"><i class="bi bi-lightning"></i> Fácil</span>
+            <span class="badge bg-secondary"><i class="bi bi-terminal"></i> Salida</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col1" class="collapse show" aria-labelledby="hd1" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Crea dos variables, `$nombre` y `$edad`, y luego imprime "Mi nombre es [NOMBRE] y tengo [EDAD] años".
-            <pre><code>
-&lt;?php
+          <p><strong>Objetivo:</strong> Mostrar texto en el navegador.</p>
+          <p class="mb-2"><strong>Pista:</strong> Usa <code>echo</code> para imprimir cadenas.</p>
+<pre><button class="copy-btn btn-sm" data-target="code1"><i class="bi bi-clipboard"></i></button><code id="code1" class="language-php">&lt;?php
+echo "¡Hola Mundo!";
+?&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicio 2 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd2">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col2" aria-expanded="false" aria-controls="col2">
+            <i class="bi bi-2-square text-primary"></i> Ejercicio 2: Variables e interpolación
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-success">Fácil</span>
+            <span class="badge bg-info text-dark"><i class="bi bi-quote"></i> Strings</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col2" class="collapse" aria-labelledby="hd2" data-bs-parent="#ejerciciosAccordion">
+        <div class="card-body">
+          <p><strong>Enunciado:</strong> Declara <code>$nombre</code> y <code>$edad</code> e imprime <em>“Mi nombre es [NOMBRE] y tengo [EDAD] años”</em>.</p>
+          <p><strong>Nota:</strong> En comillas dobles, las variables se interpolan.</p>
+<pre><button class="copy-btn btn-sm" data-target="code2"><i class="bi bi-clipboard"></i></button><code id="code2" class="language-php">&lt;?php
 $nombre = "Juan";
 $edad = 25;
 echo "Mi nombre es $nombre y tengo $edad años.";
-?&gt;
-            </code></pre>
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
-<!-- Ejercicio 3: Operaciones matemáticas -->
-<div class="card">
-    <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Ejercicio 3: Operaciones matemáticas
-            </button>
-        </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#ejerciciosAccordion">
+
+    <!-- Ejercicio 3 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd3">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col3" aria-expanded="false" aria-controls="col3">
+            <i class="bi bi-3-square text-primary"></i> Ejercicio 3: Operaciones matemáticas
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-warning text-dark">Media</span>
+            <span class="badge bg-secondary"><i class="bi bi-calculator"></i> Operadores</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col3" class="collapse" aria-labelledby="hd3" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Dados dos números, `$a = 10` y `$b = 20`, imprime la suma, resta, multiplicación y división de estos números.
-            <pre><code>
-&lt;?php
-$a = 10;
-$b = 20;
+          <p><strong>Enunciado:</strong> Con <code>$a = 10</code> y <code>$b = 20</code> muestra suma, resta, multiplicación y división.</p>
+<pre><button class="copy-btn btn-sm" data-target="code3"><i class="bi bi-clipboard"></i></button><code id="code3" class="language-php">&lt;?php
+$a = 10; $b = 20;
 echo "Suma: " . ($a + $b) . "&lt;br&gt;";
 echo "Resta: " . ($a - $b) . "&lt;br&gt;";
 echo "Multiplicación: " . ($a * $b) . "&lt;br&gt;";
-echo "División: " . ($a / $b);
-?&gt;
-            </code></pre>
+echo "División: " . ($b !== 0 ? $a / $b : "∞");
+?&gt;</code></pre>
+          <p class="small text-secondary"><i class="bi bi-exclamation-triangle"></i> Evita división por cero.</p>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Ejercicio 4: Condiciones -->
-<div class="card">
-    <div class="card-header" id="headingFour">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Ejercicio 4: Condiciones
-            </button>
-        </h5>
-    </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#ejerciciosAccordion">
+    <!-- Ejercicio 4 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd4">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col4" aria-expanded="false" aria-controls="col4">
+            <i class="bi bi-4-square text-primary"></i> Ejercicio 4: Condicionales (par/impar)
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-success">Fácil</span>
+            <span class="badge bg-secondary"><i class="bi bi-diagram-3"></i> Control</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col4" class="collapse" aria-labelledby="hd4" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Dado un número, verifica si es par o impar.
-            <pre><code>
-&lt;?php
+          <p><strong>Enunciado:</strong> Dado un número, indica si es par o impar.</p>
+<pre><button class="copy-btn btn-sm" data-target="code4"><i class="bi bi-clipboard"></i></button><code id="code4" class="language-php">&lt;?php
 $numero = 15;
-if ($numero % 2 == 0) {
-    echo "El número es par.";
-} else {
-    echo "El número es impar.";
-}
-?&gt;
-            </code></pre>
+echo ($numero % 2 === 0) ? "El número es par." : "El número es impar.";
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
-<!-- Ejercicio 5: Ciclos -->
-<div class="card">
-    <div class="card-header" id="headingFive">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Ejercicio 5: Ciclos
-            </button>
-        </h5>
-    </div>
-    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#ejerciciosAccordion">
-        <div class="card-body">
-            Enunciado: Imprime los números del 1 al 10 usando un ciclo `for`.
-            <pre><code>
-&lt;?php
-for ($i = 1; $i <= 10; $i++) {
-    echo $i . "&lt;br&gt;";
-}
-?&gt;
-            </code></pre>
-        </div>
-    </div>
-</div>
 
-<!-- Ejercicio 6: Arrays -->
-<div class="card">
-    <div class="card-header" id="headingSix">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                Ejercicio 6: Arrays
-            </button>
-        </h5>
-    </div>
-    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#ejerciciosAccordion">
+    <!-- Ejercicio 5 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd5">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col5" aria-expanded="false" aria-controls="col5">
+            <i class="bi bi-5-square text-primary"></i> Ejercicio 5: Bucles (1 a 10)
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-success">Fácil</span>
+            <span class="badge bg-secondary"><i class="bi bi-arrow-repeat"></i> Bucles</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col5" class="collapse" aria-labelledby="hd5" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Crea un array con los días de la semana y luego imprime cada día usando un ciclo `foreach`.
-            <pre><code>
-&lt;?php
-$dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+          <p><strong>Enunciado:</strong> Imprime números del 1 al 10.</p>
+<pre><button class="copy-btn btn-sm" data-target="code5"><i class="bi bi-clipboard"></i></button><code id="code5" class="language-php">&lt;?php
+for ($i = 1; $i &lt;= 10; $i++) {
+  echo $i . "&lt;br&gt;";
+}
+?&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ejercicio 6 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd6">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col6" aria-expanded="false" aria-controls="col6">
+            <i class="bi bi-6-square text-primary"></i> Ejercicio 6: Arrays + foreach
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-success">Fácil</span>
+            <span class="badge bg-info text-dark"><i class="bi bi-list-ul"></i> Arrays</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col6" class="collapse" aria-labelledby="hd6" data-bs-parent="#ejerciciosAccordion">
+        <div class="card-body">
+          <p><strong>Enunciado:</strong> Crea un array con los días de la semana e imprímelos.</p>
+<pre><button class="copy-btn btn-sm" data-target="code6"><i class="bi bi-clipboard"></i></button><code id="code6" class="language-php">&lt;?php
+$dias = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
 foreach ($dias as $dia) {
-    echo $dia . "&lt;br&gt;";
+  echo $dia . "&lt;br&gt;";
 }
-?&gt;
-            </code></pre>
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Ejercicio 7: Funciones -->
-<div class="card">
-    <div class="card-header" id="headingSeven">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                Ejercicio 7: Funciones
-            </button>
-        </h5>
-    </div>
-    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#ejerciciosAccordion">
+    <!-- Ejercicio 7 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd7">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col7" aria-expanded="false" aria-controls="col7">
+            <i class="bi bi-7-square text-primary"></i> Ejercicio 7: Funciones (suma)
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-warning text-dark">Media</span>
+            <span class="badge bg-secondary"><i class="bi bi-braces"></i> Funciones</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col7" class="collapse" aria-labelledby="hd7" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Escribe una función que tome dos números y devuelva su suma.
-            <pre><code>
-&lt;?php
-function suma($a, $b) {
-    return $a + $b;
+          <p><strong>Enunciado:</strong> Escribe una función que reciba dos números y devuelva su suma.</p>
+<pre><button class="copy-btn btn-sm" data-target="code7"><i class="bi bi-clipboard"></i></button><code id="code7" class="language-php">&lt;?php
+function suma(int|float $a, int|float $b): int|float {
+  return $a + $b;
 }
-echo suma(5, 10);  // Salida: 15
-?&gt;
-            </code></pre>
+echo suma(5, 10); // 15
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- Ejercicio 8: Formularios -->
-<div class="card">
-    <div class="card-header" id="headingEight">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                Ejercicio 8: Formularios
-            </button>
-        </h5>
-    </div>
-    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#ejerciciosAccordion">
+    <!-- Ejercicio 8 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd8">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col8" aria-expanded="false" aria-controls="col8">
+            <i class="bi bi-8-square text-primary"></i> Ejercicio 8: Formularios (POST) seguro
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-warning text-dark">Media</span>
+            <span class="badge bg-danger"><i class="bi bi-shield-lock"></i> Seguridad</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col8" class="collapse" aria-labelledby="hd8" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Crea un formulario HTML que tome un nombre y use PHP para imprimir un saludo.
-            <pre><code>
-&lt;!-- form.html --&gt;
-&lt;form action="saludo.php" method="post"&gt;
-    Nombre: &lt;input type="text" name="nombre"&gt;
-    &lt;input type="submit" value="Saludar"&gt;
-&lt;/form&gt;
+          <p><strong>Enunciado:</strong> Crea un formulario que pida un nombre y salude. Escapa la salida.</p>
+<pre><button class="copy-btn btn-sm" data-target="code8a"><i class="bi bi-clipboard"></i></button><code id="code8a" class="language-html">&lt;!-- form.html --&gt;
+&lt;form action="saludo.php" method="post" class="d-flex gap-2"&gt;
+  &lt;label class="form-label"&gt;Nombre:
+    &lt;input class="form-control" type="text" name="nombre" required maxlength="50"&gt;
+  &lt;/label&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Saludar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
 
-&lt;!-- saludo.php --&gt;
-&lt;?php
-$nombre = $_POST['nombre'];
-echo "¡Hola, $nombre!";
-?&gt;
-            </code></pre>
+<pre><button class="copy-btn btn-sm" data-target="code8b"><i class="bi bi-clipboard"></i></button><code id="code8b" class="language-php">&lt;?php // saludo.php
+// Siempre valida/escapa datos de usuario
+$nombre = $_POST['nombre'] ?? '';
+$nombre = trim($nombre);
+$saludo = "¡Hola, " . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "!";
+echo $saludo;
+?&gt;</code></pre>
+          <p class="small text-secondary"><i class="bi bi-exclamation-octagon"></i> Evita reflejar datos sin escapar (XSS).</p>
         </div>
+      </div>
     </div>
-</div>
-<!-- Ejercicio 9: Cookies -->
-<div class="card">
-    <div class="card-header" id="headingNine">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                Ejercicio 9: Cookies
-            </button>
-        </h5>
-    </div>
-    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#ejerciciosAccordion">
+
+    <!-- Ejercicio 9 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd9">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col9" aria-expanded="false" aria-controls="col9">
+            <i class="bi bi-9-square text-primary"></i> Ejercicio 9: Cookies (opciones modernas)
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-warning text-dark">Media</span>
+            <span class="badge bg-secondary"><i class="bi bi-cookie"></i> Cookies</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col9" class="collapse" aria-labelledby="hd9" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Establece una cookie que almacene el nombre del usuario y luego recupérala para mostrar un mensaje de bienvenida.
-            <pre><code>
-&lt;?php
-// Establecer cookie
-setcookie("nombre_usuario", "Juan", time() + 3600, "/");
-// Recuperar cookie y mostrar mensaje
-if(isset($_COOKIE["nombre_usuario"])) {
-    echo "¡Hola, " . $_COOKIE["nombre_usuario"] . "!";
+          <p><strong>Enunciado:</strong> Guarda el nombre en una cookie y muéstralo si existe.</p>
+<pre><button class="copy-btn btn-sm" data-target="code9"><i class="bi bi-clipboard"></i></button><code id="code9" class="language-php">&lt;?php
+// Establecer cookie (1h) con opciones modernas
+setcookie("nombre_usuario", "Juan", [
+  "expires" =&gt; time() + 3600,
+  "path" =&gt; "/",
+  "samesite" =&gt; "Lax",   // o "Strict"
+  "secure" =&gt; isset($_SERVER['HTTPS']), // true si HTTPS
+  "httponly" =&gt; true
+]);
+
+if (!empty($_COOKIE["nombre_usuario"])) {
+  echo "¡Hola, " . htmlspecialchars($_COOKIE["nombre_usuario"], ENT_QUOTES, 'UTF-8') . "!";
 }
-?&gt;
-            </code></pre>
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
-<!-- Ejercicio 10: Sesiones -->
-<div class="card">
-    <div class="card-header" id="headingTen">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                Ejercicio 10: Sesiones
-            </button>
-        </h5>
-    </div>
-    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#ejerciciosAccordion">
+
+    <!-- Ejercicio 10 -->
+    <div class="card mb-3">
+      <div class="card-header" id="hd10">
+        <h2 class="mb-0 d-flex align-items-center justify-content-between">
+          <button class="btn btn-link text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#col10" aria-expanded="false" aria-controls="col10">
+            <i class="bi bi-0-square text-primary"></i> Ejercicio 10: Sesiones (regeneración de ID)
+          </button>
+          <span class="badge-space">
+            <span class="badge bg-danger"><i class="bi bi-shield-check"></i> Importante</span>
+            <span class="badge bg-secondary"><i class="bi bi-person-badge"></i> Sesiones</span>
+          </span>
+        </h2>
+      </div>
+      <div id="col10" class="collapse" aria-labelledby="hd10" data-bs-parent="#ejerciciosAccordion">
         <div class="card-body">
-            Enunciado: Inicia una sesión y almacena una variable de sesión con un mensaje. Luego, recupera esa variable y muéstrala.
-            <pre><code>
-&lt;?php
-// Iniciar sesión
+          <p><strong>Enunciado:</strong> Inicia sesión, guarda un mensaje y muéstralo. Regenera el ID.</p>
+<pre><button class="copy-btn btn-sm" data-target="code10"><i class="bi bi-clipboard"></i></button><code id="code10" class="language-php">&lt;?php
 session_start();
-// Establecer variable de sesión
-$_SESSION["mensaje"] = "Aprender PHP es divertido!";
-// Recuperar y mostrar variable de sesión
-if(isset($_SESSION["mensaje"])) {
-    echo $_SESSION["mensaje"];
+// Regenera el ID tras login o acción sensible para mitigar fijación de sesión
+if (empty($_SESSION['regenerado'])) {
+  session_regenerate_id(true);
+  $_SESSION['regenerado'] = true;
 }
-?&gt;
-            </code></pre>
+$_SESSION["mensaje"] = "¡Aprender PHP es divertido!";
+echo $_SESSION["mensaje"] ?? "Sin mensaje";
+?&gt;</code></pre>
         </div>
+      </div>
     </div>
-</div>
 
-    </div>
-</div>
+  </div>
 
-<!-- Enlaces a Bootstrap JS y Popper.js (necesario para los componentes de Bootstrap) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bloque de retos opcionales -->
+  <section class="mt-5">
+    <h3 class="h5"><i class="bi bi-trophy text-warning"></i> Retos opcionales</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Reto 1:</strong> Crea una función <code>esPrimo($n)</code> y úsala para imprimir todos los primos del 1 al 100.
+      </li>
+      <li class="list-group-item">
+        <strong>Reto 2:</strong> Crea un formulario que reciba email y lo valide con <code>filter_var</code>.
+      </li>
+      <li class="list-group-item">
+        <strong>Reto 3:</strong> Convierte el ejercicio de cookies a sesiones y añade botón “Cerrar sesión”.
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="py-4 border-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span class="text-secondary small">© UD1 · PHP Básico</span>
+    <a class="small" href="php.md" download><i class="bi bi-download"></i> Descargar chuleta</a>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (sin jQuery) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Prism -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+
+<script>
+  // Copiar código
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-target');
+      const codeEl = document.getElementById(id);
+      const text = codeEl.textContent.replace(/\u00A0/g, ' ');
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = '<i class="bi bi-check2"></i>';
+        setTimeout(() => btn.innerHTML = '<i class="bi bi-clipboard"></i>', 1200);
+      });
+    });
+  });
+
+  // Tema claro/oscuro
+  const themeBtn = document.getElementById('themeToggle');
+  themeBtn.addEventListener('click', () => {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-bs-theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-bs-theme', next);
+    themeBtn.classList.toggle('btn-outline-dark');
+    themeBtn.classList.toggle('btn-outline-light');
+    themeBtn.innerHTML = next === 'dark' ? '<i class="bi bi-brightness-high"></i>' : '<i class="bi bi-moon-stars"></i>';
+  });
+</script>
+
 </body>
 </html>

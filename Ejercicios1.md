@@ -15,7 +15,7 @@ Este documento incluye ejercicios básicos de PHP junto con el **nombre de la ra
 **Rama:** `ejercicio2_datos_personales`
 
 ### Ejercicio 3
-**Enunciado:** Escribe un programa que muestre por pantalla 10 palabras en inglés con su traducción al castellano en dos columnas (usa <table>).  
+**Enunciado:** Escribe un programa que muestre por pantalla 10 palabras en inglés con su traducción al castellano en dos columnas (usa la etiqueta table).  
 **Rama:** `ejercicio3_tabla_palabras`
 
 ### Ejercicio 4

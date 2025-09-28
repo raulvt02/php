@@ -1,6 +1,7 @@
 # PHP – Chuleta Básica (PHP 8+)
 
-> Resumen rápido de sintaxis, operadores, arrays, funciones, POO, ficheros, HTTP, MySQL (mysqli/PDO), fechas, regex y filtros. Pensada para UD1.
+> Resumen rápido de sintaxis, operadores, arrays, funciones, POO, ficheros, HTTP, MySQL (mysqli/PDO), fechas, regex y filtros. Pensada para UD1 y UD2.
+> Manual oficial de PHP: https://www.php.net/manual/es/
 
 ## Índice
 - [Incluir PHP](#incluir-php)
